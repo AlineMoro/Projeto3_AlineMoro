@@ -3,7 +3,9 @@ var login_btn = document.querySelector('.div-login'),
     text2 = document.querySelector('.text2'),
     text3 = document.querySelector('.text3'),
     div_button = document.querySelector('.div-button'),
-    main_text = document.querySelector('.main-text')
+    main_text = document.querySelector('.main-text'),
+    div_button_cadastrar = document.createElement('div'),
+    text4 = document.createElement('div');
 
 login_btn.addEventListener('click',click_login)
 function click_login() {
@@ -17,7 +19,12 @@ function click_login() {
         text3.className = 'text3-login'
         text3.innerHTML = ''
         div_button.className = 'div-button-login'
-        div_button.innerHTML = '<a href="#">Entrar</a>'
+        div_button.innerHTML = '<a href="#entrar">Entrar</a>'
+        main_text.appendChild(div_button_cadastrar)
+        div_button_cadastrar.className = 'div-button-cadastrar'
+        div_button_cadastrar.innerHTML = '<a href="#">Fazer cadastro</a>'
+        main_text.appendChild(text4)
+        text4.className = 'text4'
     }
 
     //Após logar
@@ -60,25 +67,21 @@ function click_login() {
                     document.cookie = 'user = ' + JSON.stringify(user)
                 }
             })
-
-            .catch(function (error) {
-                //console.log(error)
-                if((email != '' && senha != '') && (email.length >= 3 && senha.length >= 3)){
-                    text3.className = 'text3-error'
-                    text3.innerHTML = '<h3 class="msg_error">Usuário ou senha inválido</h3>'
-                }
-            })
             
             //Mensagens de erro antes de submeter o AJAX
             if(email === '' || senha === '') {
                 //console.log("Erro")
-                text3.className = 'text3-empity'
-                text3.innerHTML = '<h3 class="msg_error">Preencha todos os campos</h3>'
+                text4.className = 'text4-empty'
+                text4.innerHTML = '<h3 class="msg_error">Preencha todos os campos</h3>'
             }
             else if((email.length > 0 && email.length < 3) || (senha.length > 0 && senha.length < 3)) {
                 //console.log("Erro")
-                text3.className = 'text3-length'
-                text3.innerHTML = '<h3 class="msg_error">Campo(s) inválido(s)</h3>'
+                text4.className = 'text4-length'
+                text4.innerHTML = '<h3 class="msg_error">Campo(s) inválido(s)</h3>'
+            }
+            else if((email != '' && senha != '') && (email.length >= 3 && senha.length >= 3)){
+                text4.className = 'text4-error'
+                text4.innerHTML = '<h3 class="msg_error">Usuário ou senha inválido</h3>'
             }
         }
 
@@ -92,9 +95,9 @@ function click_login() {
                     send_pesquisa = document.createElement('input')
     
                 div_oferta.innerHTML = '<h2>Com PicPay você tem acesso exclusivo às promoções dos seus jogos favoritos</h2>'
-                div_oferta.appendChild(text3)
-                text3.className = 'text3-success'
-                text3.innerHTML = '<h3 class="msg_error">Login efetuado com sucesso!</h3>'
+                div_oferta.appendChild(text4)
+                text4.className = 'text4-success'
+                text4.innerHTML = '<h3 class="msg_error">Login efetuado com sucesso!</h3>'
                 div_oferta.className = 'div-oferta'
     
                 section.appendChild(consulta)
@@ -147,7 +150,5 @@ function click_login() {
                 }
             }
         }, 1300)
-        
-            
     }
 }

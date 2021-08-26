@@ -128,7 +128,7 @@ header {
 
 /*1º SESSÃO*/
 .first-section {
-    background-image: url(./assets/IZA.png);
+    background-image: url(./public/IZA.png);
     background-repeat: no-repeat;
     background-position: 32vw 4vh;
     background-size: 50%;
@@ -156,7 +156,7 @@ header {
     background-color: var(--Color-primary);
     display: block;
     margin-top: 100px;
-    height: 400px;
+    height: 450px;
     width: 326px;
     border: 2px solid grey;
     border-radius: 5px;
@@ -307,7 +307,7 @@ input::placeholder {
     font-weight: bold;
 }
 
-.div-button-login {
+.div-button-login, .div-button-cadastrar {
     margin: 15px auto;
     display: flex;
     justify-content: center;
@@ -320,16 +320,16 @@ input::placeholder {
     padding: 2px;
 }
 
-.div-button-login a {
+.div-button-login a, .div-button-cadastrar a {
     text-decoration: none;
     color: var(--Color-secundary);
-    padding: 7px 100px;
+    padding: 7px 50px;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
-.text3-success h3{
+.text4-success h3{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -338,7 +338,7 @@ input::placeholder {
     color: var(--Color-section2);
 }
 
-.text3-empity h3, .text3-length h3, .text3-error h3{
+.text4-empty h3, .text4-length h3, .text4-error h3{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -411,7 +411,7 @@ input::placeholder {
     border: 1px solid gray;
 }
 
-.div-button:hover, .div-button-login:hover {
+.div-button:hover, .div-button-login:hover, .div-button-cadastrar:hover {
     background-color: var(--Color-hover-button);
     transition: background 0.2s; 
 }
