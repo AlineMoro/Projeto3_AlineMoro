@@ -385,7 +385,7 @@ input::placeholder {
 }
 
 .div-consulta .pesquisa {
-    width: 77%;
+    width: 30%;
     height: 30px;
     margin: 10px 15px;
     border: 0.2px solid var(--Color-secundary);

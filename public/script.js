@@ -27,21 +27,6 @@ var login_btn = document.querySelector('.div-login'),
             senha = document.querySelector('#userSenha').value,
             entrar = document.querySelector('.entrar');
          
-                if(email === '' || senha === '') {
-                    //console.log("Erro")
-                    text4.className = 'text4-empty'
-                    text4.innerHTML = '<h3 class="msg_error">Preencha todos os campos</h3>'
-                }
-                else if((email.length > 0 && email.length < 3) || (senha.length > 0 && senha.length < 3)) {
-                    //console.log("Erro")
-                    text4.className = 'text4-length'
-                    text4.innerHTML = '<h3 class="msg_error">Campo(s) inválido(s)</h3>'
-                }
-                else if((email != '' && senha != '') && (email.length >= 3 && senha.length >= 3)){
-                    text4.className = 'text4-error'
-                    text4.innerHTML = '<h3 class="msg_error">Usuário ou senha inválido</h3>'
-                }
-        
 
         div_button_cadastrar.addEventListener('click', function() {
             main_text.className = 'main-text-login'
@@ -72,24 +57,27 @@ var login_btn = document.querySelector('.div-login'),
         
         var div_oferta = document.querySelector('.main-text-login'),
             section = document.querySelector('.div-section1'),
-            consulta = document.createElement('div')
-            input_pesquisa = document.createElement('input')
-            send_pesquisa = document.createElement('input')
+            consulta = document.createElement('div'),
+            input_jogo = document.createElement('input'),
+            input_preco = document.createElement('input'),
+            send_pesquisa = document.createElement('input');
     
         div_oferta.innerHTML = '<h2>Com PicPay você tem acesso exclusivo às promoções dos seus jogos favoritos</h2>'
         div_oferta.appendChild(text4)
         text4.className = 'text4-success'
         text4.innerHTML = '<h3 class="msg_error">Login efetuado com sucesso!</h3>'
         div_oferta.className = 'div-oferta'
-    
         section.appendChild(consulta)
         consulta.className = 'div-consulta'
-        consulta.appendChild(input_pesquisa)
-        input_pesquisa.className = 'pesquisa'
-        input_pesquisa.placeholder = 'Qual jogo você deseja encontrar?'
+        consulta.appendChild(input_jogo)
+        consulta.appendChild(input_preco)
+        input_jogo.className = 'pesquisa'
+        input_preco.className = 'pesquisa'
+        input_jogo.placeholder = 'Nome do Jogo'
+        input_preco.placeholder = 'Preco'
         consulta.appendChild(send_pesquisa)
         send_pesquisa.type = 'submit'
-        send_pesquisa.value = 'Pesquisar'
+        send_pesquisa.value = 'Publicar'
         send_pesquisa.className = 'send-pesquisa'
     }
     
