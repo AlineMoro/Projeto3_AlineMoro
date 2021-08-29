@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: false}));
-const mongo_url = 'mongodb://localhost:27017/teste3';
+const mongo_url = 'mongodb+srv://deploy:deploy123@cluster0.a0b38.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const upload = multer({dest: './uploads'});
 
 mongoose.connect(mongo_url, function(err) {
