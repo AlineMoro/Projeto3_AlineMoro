@@ -385,7 +385,7 @@ input::placeholder {
 }
 
 .div-consulta .pesquisa {
-    width: 30%;
+    width: 90%;
     height: 30px;
     margin: 10px 15px;
     border: 0.2px solid var(--Color-secundary);
@@ -398,10 +398,17 @@ input::placeholder {
     outline: 0;
 }
 
+.file {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 60%;
+}
+
 .div-consulta .send-pesquisa {
     width: 17%;
     height: 35px;
-    margin: 10px auto;
+    margin: 10px 15px;
     border: 1px solid rgb(151, 151, 151);
     border-radius: 10px;
     cursor: pointer;

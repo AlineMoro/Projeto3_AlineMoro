@@ -3,6 +3,7 @@ let path = require('path'),
     mongoose = require('mongoose'),
     cookieParser = require('cookie-parser'),
     {body, validationResult} = require('express-validator'),
+    multer = require('multer'),
     User = require('./model/user'),
     app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: false}));
 const mongo_url = 'mongodb://localhost:27017/teste3';
+const upload = multer({dest: './uploads'});
 
 mongoose.connect(mongo_url, function(err) {
     if(err)
@@ -75,6 +77,10 @@ app.post('/autenticar', [
     });
 });
 
+app.post('/upload', upload.array('nome', 'preco','file'), (req, res) => {
+    console.log(res.status);
+    res.send('Upload feito com sucesso');
+});
 
 app.listen(5000, () => {
     console.log('server started');
